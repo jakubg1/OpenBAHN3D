@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=1]
+
+[ext_resource path="res://tile/id0.png" type="Texture" id=1]
+[ext_resource path="res://tile/id1.png" type="Texture" id=2]
+[ext_resource path="res://tile/id2.png" type="Texture" id=3]
+[ext_resource path="res://tile/id3.png" type="Texture" id=4]
+[ext_resource path="res://tile/id4.png" type="Texture" id=5]
+[ext_resource path="res://tile/id8.png" type="Texture" id=6]
+[ext_resource path="res://tile/id9.png" type="Texture" id=7]
+[ext_resource path="res://tile/id10.png" type="Texture" id=8]
+[ext_resource path="res://tile/id11.png" type="Texture" id=9]
+
+[node name="root" type="Node2D"]
+
+[node name="tile0" type="Sprite" parent="."]
+
+texture = ExtResource( 1 )
+offset = Vector2( 0, -20 )
+
+[node name="tile1" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+offset = Vector2( 0, -20 )
+
+[node name="tile2" type="Sprite" parent="."]
+
+texture = ExtResource( 3 )
+offset = Vector2( 0, -20 )
+
+[node name="tile3" type="Sprite" parent="."]
+
+texture = ExtResource( 4 )
+offset = Vector2( 0, -20 )
+
+[node name="tile4" type="Sprite" parent="."]
+
+texture = ExtResource( 5 )
+offset = Vector2( 0, -20 )
+
+[node name="tile8" type="Sprite" parent="."]
+
+texture = ExtResource( 6 )
+offset = Vector2( 0, -20 )
+
+[node name="tile9" type="Sprite" parent="."]
+
+texture = ExtResource( 7 )
+offset = Vector2( 0, -20 )
+
+[node name="tile10" type="Sprite" parent="."]
+
+texture = ExtResource( 8 )
+offset = Vector2( 0, -20 )
+
+[node name="tile11" type="Sprite" parent="."]
+
+texture = ExtResource( 9 )
+offset = Vector2( 0, -20 )
+
+
