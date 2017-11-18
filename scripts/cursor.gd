@@ -6,6 +6,8 @@ func _ready():
 	set_process(true)
 	set_process_unhandled_input(true)
 	add_user_signal("LMB_pressed")
+	add_user_signal("MW_up")
+	add_user_signal("MW_down")
 	#connect("LMB_pressed", get_parent(), "_cursorL_pressed")
 
 func _process(delta):
@@ -17,4 +19,10 @@ func _unhandled_input(event):
 	if event.type == InputEvent.MOUSE_BUTTON:
 		if event.button_index == BUTTON_LEFT and event.is_pressed():
 			emit_signal("LMB_pressed", pos)
+			pass
+		if event.button_index == BUTTON_WHEEL_UP and event.is_pressed():
+			emit_signal("MW_up")
+			pass
+		if event.button_index == BUTTON_WHEEL_DOWN and event.is_pressed():
+			emit_signal("MW_down")
 			pass
