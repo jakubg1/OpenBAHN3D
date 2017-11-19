@@ -23,11 +23,10 @@ func _cursorL_pressed(pos):
 
 func _cursorU_roll():
 	curTile += 1
-	print(curTile)
 
 func _cursorD_roll():
-	curTile -= 1
-	print(curTile)
+	if curTile > 0:
+		curTile -= 1
 
 func _add_tile(pos, id, params):
 	tiles[str(pos[0]) + " " + str(pos[1])] = []

@@ -15,46 +15,55 @@
 [node name="tile0" type="Sprite" parent="."]
 
 texture = ExtResource( 1 )
+centered = false
 offset = Vector2( 0, -20 )
 
 [node name="tile1" type="Sprite" parent="."]
 
 texture = ExtResource( 2 )
+centered = false
 offset = Vector2( 0, -20 )
 
 [node name="tile2" type="Sprite" parent="."]
 
 texture = ExtResource( 3 )
+centered = false
 offset = Vector2( 0, -20 )
 
 [node name="tile3" type="Sprite" parent="."]
 
 texture = ExtResource( 4 )
+centered = false
 offset = Vector2( 0, -20 )
 
 [node name="tile4" type="Sprite" parent="."]
 
 texture = ExtResource( 5 )
+centered = false
 offset = Vector2( 0, -20 )
 
 [node name="tile8" type="Sprite" parent="."]
 
 texture = ExtResource( 6 )
+centered = false
 offset = Vector2( 0, -20 )
 
 [node name="tile9" type="Sprite" parent="."]
 
 texture = ExtResource( 7 )
+centered = false
 offset = Vector2( 0, -20 )
 
 [node name="tile10" type="Sprite" parent="."]
 
 texture = ExtResource( 8 )
+centered = false
 offset = Vector2( 0, -20 )
 
 [node name="tile11" type="Sprite" parent="."]
 
 texture = ExtResource( 9 )
+centered = false
 offset = Vector2( 0, -20 )
 
 

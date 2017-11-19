@@ -20,7 +20,7 @@ collision/bounce = 0.0
 collision/layers = 1
 collision/mask = 1
 occluder/light_mask = 1
-tile_data = IntArray( 327681, 1, 327682, 1, 327683, 1, 327684, 6, 393221, 5, 393222, 6, 458759, 5, 458760, 6, 589804, 0, 655340, 0, 720874, 0, 720875, 0 )
+tile_data = IntArray( 262148, 1, 262149, 2, 327682, 1, 327683, 1, 327684, 1, 327685, 2, 393221, 2, 458757, 2 )
 script/script = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
