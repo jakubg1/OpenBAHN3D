@@ -6,6 +6,7 @@ func _ready():
 	get_node("Cursor").connect("LMB_pressed", self, "_cursorL_pressed")
 	get_node("Cursor").connect("MW_up", self, "_cursorU_roll")
 	get_node("Cursor").connect("MW_down", self, "_cursorD_roll")
+	get_node("Cursor/PopupMenu").connect("menu_select", self, "_menu_select")
 	_refresh()
 
 func _refresh():
@@ -33,3 +34,8 @@ func _cursorU_roll():
 func _cursorD_roll():
 	if curTile > 0:
 		curTile -= 1
+
+func _menu_select(id):
+	if id == 0:
+		get_node("Cursor")
+		_rem_tile(Vector2(0, 0)) # there will be current cursor position

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://tile/marker.png" type="Texture" id=1]
 [ext_resource path="res://scripts/cursor.gd" type="Script" id=2]
 [ext_resource path="res://tile/id1.png" type="Texture" id=3]
 [ext_resource path="res://scripts/cursorTile.gd" type="Script" id=4]
+[ext_resource path="res://scenes/workpopmenu.tscn" type="PackedScene" id=5]
 
 [node name="Cursor" type="Sprite"]
 
@@ -18,5 +19,9 @@ centered = false
 offset = Vector2( 0, -20 )
 modulate = Color( 1, 0, 1, 1 )
 script/script = ExtResource( 4 )
+
+[node name="PopupMenu" parent="." instance=ExtResource( 5 )]
+
+visibility/visible = false
 
 
