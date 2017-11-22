@@ -47,17 +47,17 @@ func _move_cam_step(dir):
 	if dir == 3: # right
 		_move_cam(Vector2(1, 0))
 
-func _add_tile(pos, id, params):
-	tiles[str(pos[0]) + " " + str(pos[1])] = []
-	tiles[str(pos[0]) + " " + str(pos[1])].append(id)
+func _set_tile(pos, id, params):
+	tiles[str(pos[0] + cameraPos[0]) + " " + str(pos[1] + cameraPos[1])] = []
+	tiles[str(pos[0] + cameraPos[0]) + " " + str(pos[1] + cameraPos[1])].append(id)
 	_refresh()
 
 func _rem_tile(pos):
-	tiles[str(pos[0]) + " " + str(pos[1])] = []
+	tiles[str(pos[0] + cameraPos[0]) + " " + str(pos[1] + cameraPos[1])] = []
 	_refresh()
 
 func _cursorL_pressed(pos):
-	_add_tile(pos, curTile, [])
+	_set_tile(pos, curTile, [])
 
 func _cursorU_roll():
 	curTile += 1
