@@ -2,7 +2,7 @@ extends TileMap
 var tiles = {}
 var curTile = 0
 var cameraPos = Vector2(0, 0)
-var cameraSize = Vector2(10, 10)
+var cameraSize = Vector2(26, 30)
 
 func _ready():
 	get_node("Cursor").connect("LMB_pressed", self, "_cursorL_pressed")
@@ -25,10 +25,10 @@ func _unhandled_input(event):
 
 func _refresh():
 	clear()
+	cameraSize = OS.get_window_size() / get_node("Cursor").size
 	if tiles.size() > 0:
 		for tile in tiles.keys():
 			var pos = Vector2(tile.split(" ")[0], tile.split(" ")[1]) - cameraPos
-			#if (pos[0] >= 0 and pos[0] < cameraSize[0]) and (pos[1] >= 0 and pos[1] < cameraSize[1]):
 			if pos >= Vector2(0, 0) and pos < cameraSize:
 				if tiles[tile].size():
 					set_cell(pos[0], pos[1], tiles[tile][0])
@@ -48,12 +48,14 @@ func _move_cam_step(dir):
 		_move_cam(Vector2(1, 0))
 
 func _set_tile(pos, id, params):
-	tiles[str(pos[0] + cameraPos[0]) + " " + str(pos[1] + cameraPos[1])] = []
-	tiles[str(pos[0] + cameraPos[0]) + " " + str(pos[1] + cameraPos[1])].append(id)
-	_refresh()
+	if id == 0:
+		_rem_tile(pos)
+	else:
+		tiles[str(pos[0] + cameraPos[0]) + " " + str(pos[1] + cameraPos[1])] = [id]
+		_refresh()
 
 func _rem_tile(pos):
-	tiles[str(pos[0] + cameraPos[0]) + " " + str(pos[1] + cameraPos[1])] = []
+	tiles.erase(str(pos[0] + cameraPos[0]) + " " + str(pos[1] + cameraPos[1]))
 	_refresh()
 
 func _cursorL_pressed(pos):
