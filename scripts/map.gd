@@ -67,5 +67,5 @@ func _cursorD_roll():
 
 func _menu_select(id):
 	if id == 0:
-		get_node("Cursor")
-		_rem_tile(Vector2(0, 0)) # there will be current cursor position
+		var pos = get_node("Cursor").pos
+		_rem_tile(pos)
