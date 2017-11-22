@@ -23,9 +23,6 @@ func _process(delta):
 		pxpos = pos * size
 		set_pos(pxpos)
 
-func _menu_state(state):
-	isEnabled = not state
-
 func _unhandled_input(event):
 	if event.type == InputEvent.MOUSE_BUTTON:
 		if event.button_index == BUTTON_LEFT and event.is_pressed():
@@ -36,3 +33,6 @@ func _unhandled_input(event):
 			emit_signal("MW_up")
 		if event.button_index == BUTTON_WHEEL_DOWN and event.is_pressed():
 			emit_signal("MW_down")
+
+func _menu_state(state):
+	isEnabled = not state
