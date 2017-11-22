@@ -30,7 +30,8 @@ func _refresh():
 			var pos = Vector2(tile.split(" ")[0], tile.split(" ")[1]) - cameraPos
 			#if (pos[0] >= 0 and pos[0] < cameraSize[0]) and (pos[1] >= 0 and pos[1] < cameraSize[1]):
 			if pos >= Vector2(0, 0) and pos < cameraSize:
-				set_cell(pos[0], pos[1], tiles[tile][0])
+				if tiles[tile].size():
+					set_cell(pos[0], pos[1], tiles[tile][0])
 
 func _move_cam(offset):
 	cameraPos += offset
