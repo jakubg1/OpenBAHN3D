@@ -14,7 +14,8 @@ func _refresh():
 	if tiles.size() > 0:
 		for tile in tiles.keys():
 			var pos = Vector2(tile.split(" ")[0], tile.split(" ")[1])
-			set_cell(pos[0], pos[1], tiles[tile][0])
+			if tiles[tile].size():
+				set_cell(pos[0], pos[1], tiles[tile][0])
 
 func _add_tile(pos, id, params):
 	tiles[str(pos[0]) + " " + str(pos[1])] = []
@@ -37,5 +38,5 @@ func _cursorD_roll():
 
 func _menu_select(id):
 	if id == 0:
-		get_node("Cursor")
-		_rem_tile(Vector2(0, 0)) # there will be current cursor position
+		var pos = get_node("Cursor").pos
+		_rem_tile(pos)
