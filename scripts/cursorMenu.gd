@@ -1,11 +1,10 @@
 extends PopupMenu
 
+signal menu_state
+signal menu_select
+
 func _ready():
 	set_process(true)
-
-func _enter_tree():
-	add_user_signal("menu_state")
-	add_user_signal("menu_select")
 	System.Cursor.connect("LMB_pressed", self, "_cursorL_pressed")
 	System.Cursor.connect("RMB_pressed", self, "_cursorR_pressed")
 

@@ -5,16 +5,15 @@ var pos = Vector2(0, 0)
 var pxpos = Vector2(0, 0)
 var isEnabled = true
 
+signal LMB_pressed
+signal RMB_pressed
+signal MW_up
+signal MW_down
+
 func _ready():
 	get_node("PopupMenu").connect("menu_state", self, "_menu_state")
 	set_process(true)
 	set_process_unhandled_input(true)
-
-func _enter_tree():
-	add_user_signal("LMB_pressed")
-	add_user_signal("RMB_pressed")
-	add_user_signal("MW_up")
-	add_user_signal("MW_down")
 
 func _process(delta):
 	if (isEnabled):
