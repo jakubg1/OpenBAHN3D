@@ -1,0 +1,25 @@
+[gd_scene format=1]
+
+[node name="ButtonArray" type="HButtonArray"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 1024.0
+margin/bottom = 24.0
+flat = false
+button/count = 2
+button/min_button_size = -1.0
+button/align = 0
+button/0/text = "File"
+button/0/tooltip = ""
+button/0/icon = null
+button/1/text = "Time"
+button/1/tooltip = ""
+button/1/icon = null
+button/selected = 0
+
+
