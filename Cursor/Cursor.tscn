@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://Tiles/marker.png" type="Texture" id=1]
+[ext_resource path="res://Cursor/Cursor.gd" type="Script" id=2]
+[ext_resource path="res://Tiles/RailroadTracks/id1.png" type="Texture" id=3]
+[ext_resource path="res://Cursor/TileIcon.gd" type="Script" id=4]
+[ext_resource path="res://CursorContextMenu/CursorContextMenu.tscn" type="PackedScene" id=5]
+
+[node name="Cursor" type="Sprite"]
+
+texture = ExtResource( 1 )
+centered = false
+script/script = ExtResource( 2 )
+
+[node name="TileIcon" type="Sprite" parent="."]
+
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 0, -20 )
+modulate = Color( 1, 0, 1, 1 )
+script/script = ExtResource( 4 )
+
+[node name="CursorContextMenu" parent="." instance=ExtResource( 5 )]
+
+visibility/visible = false
+items = [ "Remove tile", null, false, false, false, 0, 0, null, "", false ]
+
+

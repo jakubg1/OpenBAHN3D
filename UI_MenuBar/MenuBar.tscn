@@ -3,7 +3,7 @@
 [node name="ButtonArray" type="HButtonArray"]
 
 focus/ignore_mouse = false
-focus/stop_mouse = true
+focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
