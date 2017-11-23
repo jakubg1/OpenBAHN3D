@@ -2,12 +2,12 @@ extends PopupMenu
 
 func _ready():
 	set_process(true)
-	get_node("../").connect("LMB_pressed", self, "_cursorL_pressed")
-	get_node("../").connect("RMB_pressed", self, "_cursorR_pressed")
 
 func _enter_tree():
 	add_user_signal("menu_state")
 	add_user_signal("menu_select")
+	System.Cursor.connect("LMB_pressed", self, "_cursorL_pressed")
+	System.Cursor.connect("RMB_pressed", self, "_cursorR_pressed")
 
 func _process(delta):
 	emit_signal("menu_state", is_visible())

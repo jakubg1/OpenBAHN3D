@@ -5,10 +5,11 @@ var cameraPos = Vector2(0, 0)
 var cameraSize = Vector2(26, 30)
 
 func _ready():
-	get_node("Cursor").connect("LMB_pressed", self, "_cursorL_pressed")
-	get_node("Cursor").connect("MW_up", self, "_cursorU_roll")
-	get_node("Cursor").connect("MW_down", self, "_cursorD_roll")
-	get_node("Cursor/PopupMenu").connect("menu_select", self, "_menu_select")
+	
+	System.Cursor.connect("LMB_pressed", self, "_cursorL_pressed")
+	System.Cursor.connect("MW_up", self, "_cursorU_roll")
+	System.Cursor.connect("MW_down", self, "_cursorD_roll")
+	System.Cursor.get_node("PopupMenu").connect("menu_select", self, "_menu_select")
 	set_process_unhandled_input(true)
 	_refresh()
 
@@ -25,7 +26,7 @@ func _unhandled_input(event):
 
 func _refresh():
 	clear()
-	cameraSize = OS.get_window_size() / get_node("Cursor").size
+	cameraSize = OS.get_window_size() / System.Cursor.size
 	if tiles.size() > 0:
 		for tile in tiles.keys():
 			var pos = Vector2(tile.split(" ")[0], tile.split(" ")[1]) - cameraPos
@@ -70,5 +71,4 @@ func _cursorD_roll():
 
 func _menu_select(id):
 	if id == 0:
-		var pos = get_node("Cursor").pos
-		_rem_tile(pos)
+		_rem_tile(System.Cursor.pos)
