@@ -13,7 +13,7 @@ signal MW_down
 
 func _ready():
 	
-	get_node("PopupMenu").connect("menu_state", self, "_on_menu_state")
+	get_node("CursorContextMenu").connect("menu_state", self, "_on_menu_state")
 	set_process(true)
 	set_process_unhandled_input(true)
 

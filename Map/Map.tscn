@@ -1,8 +1,10 @@
 [gd_scene load_steps=4 format=1]
 
-[ext_resource path="res://tile/map.xml" type="TileSet" id=1]
-[ext_resource path="res://scripts/map.gd" type="Script" id=2]
-[ext_resource path="res://scenes/workcursor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Tiles/RailroadTracks/RailroadTracks.xml" type="TileSet" id=1]
+[ext_resource path="res://Map/Map.gd" type="Script" id=2]
+[ext_resource path="res://Cursor/Cursor.tscn" type="PackedScene" id=3]
+
+
 
 [node name="Map" type="TileMap"]
 

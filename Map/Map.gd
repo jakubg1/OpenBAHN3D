@@ -12,7 +12,7 @@ func _ready():
 	System.Cursor.connect("LMB_pressed", self, "_cursorL_pressed")
 	System.Cursor.connect("MW_up", self, "_cursorU_roll")
 	System.Cursor.connect("MW_down", self, "_cursorD_roll")
-	System.Cursor.get_node("PopupMenu").connect("menu_select", self, "_menu_select")
+	System.Cursor.get_node("CursorContextMenu").connect("menu_select", self, "_menu_select")
 	set_process_unhandled_input(true)
 	_refresh()
 

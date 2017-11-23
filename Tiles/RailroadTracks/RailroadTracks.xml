@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="TileSet" subresource_count="10" version="2.1" version_name="Godot Engine v2.1.4.stable.official">
-	<ext_resource path="res://tile/id0.png" type="Texture" index="0"></ext_resource>
-	<ext_resource path="res://tile/id1.png" type="Texture" index="1"></ext_resource>
-	<ext_resource path="res://tile/id2.png" type="Texture" index="2"></ext_resource>
-	<ext_resource path="res://tile/id3.png" type="Texture" index="3"></ext_resource>
-	<ext_resource path="res://tile/id4.png" type="Texture" index="4"></ext_resource>
-	<ext_resource path="res://tile/id8.png" type="Texture" index="5"></ext_resource>
-	<ext_resource path="res://tile/id9.png" type="Texture" index="6"></ext_resource>
-	<ext_resource path="res://tile/id10.png" type="Texture" index="7"></ext_resource>
-	<ext_resource path="res://tile/id11.png" type="Texture" index="8"></ext_resource>
+<resource_file type="TileSet" subresource_count="10" version="2.1" version_name="Godot Engine v2.1.3.stable.official">
+	<ext_resource path="res://Tiles/RailroadTracks/id8.png" type="Texture" index="5"></ext_resource>
+	<ext_resource path="res://Tiles/RailroadTracks/id2.png" type="Texture" index="2"></ext_resource>
+	<ext_resource path="res://Tiles/RailroadTracks/id9.png" type="Texture" index="6"></ext_resource>
+	<ext_resource path="res://Tiles/RailroadTracks/id3.png" type="Texture" index="3"></ext_resource>
+	<ext_resource path="res://Tiles/RailroadTracks/id1.png" type="Texture" index="1"></ext_resource>
+	<ext_resource path="res://Tiles/RailroadTracks/id10.png" type="Texture" index="7"></ext_resource>
+	<ext_resource path="res://Tiles/RailroadTracks/id4.png" type="Texture" index="4"></ext_resource>
+	<ext_resource path="res://Tiles/RailroadTracks/id11.png" type="Texture" index="8"></ext_resource>
+	<ext_resource path="res://Tiles/RailroadTracks/id0.png" type="Texture" index="0"></ext_resource>
 	<main_resource>
 		<string name="0/name"> "tile0" </string>
 		<resource name="0/texture" external="0">  </resource>
@@ -20,8 +20,6 @@
 		<resource name="0/navigation"></resource>		<vector2 name="0/shape_offset"> 0, 0 </vector2>
 		<array name="0/shapes" len="0" shared="false">
 		</array>
-		<vector2 name="0/one_way_collision_direction"> 0, 0 </vector2>
-		<real name="0/one_way_collision_max_depth"> 0 </real>
 		<string name="1/name"> "tile1" </string>
 		<resource name="1/texture" external="1">  </resource>
 		<vector2 name="1/tex_offset"> 0, -20 </vector2>
@@ -32,8 +30,6 @@
 		<resource name="1/navigation"></resource>		<vector2 name="1/shape_offset"> 0, 0 </vector2>
 		<array name="1/shapes" len="0" shared="false">
 		</array>
-		<vector2 name="1/one_way_collision_direction"> 0, 0 </vector2>
-		<real name="1/one_way_collision_max_depth"> 0 </real>
 		<string name="2/name"> "tile2" </string>
 		<resource name="2/texture" external="2">  </resource>
 		<vector2 name="2/tex_offset"> 0, -20 </vector2>
@@ -44,8 +40,6 @@
 		<resource name="2/navigation"></resource>		<vector2 name="2/shape_offset"> 0, 0 </vector2>
 		<array name="2/shapes" len="0" shared="false">
 		</array>
-		<vector2 name="2/one_way_collision_direction"> 0, 0 </vector2>
-		<real name="2/one_way_collision_max_depth"> 0 </real>
 		<string name="3/name"> "tile3" </string>
 		<resource name="3/texture" external="3">  </resource>
 		<vector2 name="3/tex_offset"> 0, -20 </vector2>
@@ -56,8 +50,6 @@
 		<resource name="3/navigation"></resource>		<vector2 name="3/shape_offset"> 0, 0 </vector2>
 		<array name="3/shapes" len="0" shared="false">
 		</array>
-		<vector2 name="3/one_way_collision_direction"> 0, 0 </vector2>
-		<real name="3/one_way_collision_max_depth"> 0 </real>
 		<string name="4/name"> "tile4" </string>
 		<resource name="4/texture" external="4">  </resource>
 		<vector2 name="4/tex_offset"> 0, -20 </vector2>
@@ -68,8 +60,6 @@
 		<resource name="4/navigation"></resource>		<vector2 name="4/shape_offset"> 0, 0 </vector2>
 		<array name="4/shapes" len="0" shared="false">
 		</array>
-		<vector2 name="4/one_way_collision_direction"> 0, 0 </vector2>
-		<real name="4/one_way_collision_max_depth"> 0 </real>
 		<string name="5/name"> "tile8" </string>
 		<resource name="5/texture" external="5">  </resource>
 		<vector2 name="5/tex_offset"> 0, -20 </vector2>
@@ -80,8 +70,6 @@
 		<resource name="5/navigation"></resource>		<vector2 name="5/shape_offset"> 0, 0 </vector2>
 		<array name="5/shapes" len="0" shared="false">
 		</array>
-		<vector2 name="5/one_way_collision_direction"> 0, 0 </vector2>
-		<real name="5/one_way_collision_max_depth"> 0 </real>
 		<string name="6/name"> "tile9" </string>
 		<resource name="6/texture" external="6">  </resource>
 		<vector2 name="6/tex_offset"> 0, -20 </vector2>
@@ -92,8 +80,6 @@
 		<resource name="6/navigation"></resource>		<vector2 name="6/shape_offset"> 0, 0 </vector2>
 		<array name="6/shapes" len="0" shared="false">
 		</array>
-		<vector2 name="6/one_way_collision_direction"> 0, 0 </vector2>
-		<real name="6/one_way_collision_max_depth"> 0 </real>
 		<string name="7/name"> "tile10" </string>
 		<resource name="7/texture" external="7">  </resource>
 		<vector2 name="7/tex_offset"> 0, -20 </vector2>
@@ -104,8 +90,6 @@
 		<resource name="7/navigation"></resource>		<vector2 name="7/shape_offset"> 0, 0 </vector2>
 		<array name="7/shapes" len="0" shared="false">
 		</array>
-		<vector2 name="7/one_way_collision_direction"> 0, 0 </vector2>
-		<real name="7/one_way_collision_max_depth"> 0 </real>
 		<string name="8/name"> "tile11" </string>
 		<resource name="8/texture" external="8">  </resource>
 		<vector2 name="8/tex_offset"> 0, -20 </vector2>
@@ -116,8 +100,6 @@
 		<resource name="8/navigation"></resource>		<vector2 name="8/shape_offset"> 0, 0 </vector2>
 		<array name="8/shapes" len="0" shared="false">
 		</array>
-		<vector2 name="8/one_way_collision_direction"> 0, 0 </vector2>
-		<real name="8/one_way_collision_max_depth"> 0 </real>
 
 	</main_resource>
 </resource_file>
