@@ -69,6 +69,11 @@ func _rem_tile(pos):
 	tiles.erase(get_tile_name(pos + cameraPos))
 	_refresh()
 
+func _clear_world():
+	
+	tiles = {}
+	_refresh()
+
 func _cursorL_pressed(pos):
 	
 	_set_tile(pos, curTile, [])
@@ -90,5 +95,5 @@ func _menu_select(id):
 static func get_tile_name(pos):
 	
 	return str(pos[0])\
-			+ " "\
-			+ str(pos[1])
+		+ " "\
+		+ str(pos[1])
