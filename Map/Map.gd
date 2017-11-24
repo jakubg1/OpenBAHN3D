@@ -4,8 +4,12 @@ var tiles = {}
 var curTile = 0
 var cameraPos = Vector2(0, 0)
 var cameraSize = Vector2(26, 30)
+var time = [0, 0, 0, 0] # first: day of the week (0-6), second: hour, third: minute, fourth: second
+var timeDelay = 0
 
 enum {UP, LEFT, DOWN, RIGHT}
+
+signal new_second
 
 func _ready():
 	
@@ -13,8 +17,16 @@ func _ready():
 	System.Cursor.connect("MW_up", self, "_cursorU_roll")
 	System.Cursor.connect("MW_down", self, "_cursorD_roll")
 	System.Cursor.get_node("CursorContextMenu").connect("menu_select", self, "_menu_select")
+	set_process(true)
 	set_process_unhandled_input(true)
 	_refresh()
+
+func _process(delta):
+	
+	timeDelay += delta
+	if timeDelay >= 1:
+		_new_second()
+		timeDelay -= 1
 
 func _unhandled_input(event):
 	
@@ -73,6 +85,22 @@ func _clear_world():
 	
 	tiles = {}
 	_refresh()
+
+func _new_second():
+	
+	time[3] += 1
+	if time[3] == 60: # new minute
+		time[2] += 1
+		time[3] = 0
+	if time[2] == 60: # new hour
+		time[1] += 1
+		time[2] = 0
+	if time[1] == 24: # new day
+		time[0] += 1
+		time[1] = 0
+	if time[0] == 7: # new week
+		time[0] = 0
+	emit_signal("new_second", time)
 
 func _cursorL_pressed(pos):
 	
