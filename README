@@ -1,1 +1,32 @@
 #OpenBAHN3Ds
+
+OpenBAHN is an open-source software that is an alternative for payware JBSS BAHN (http://jbss.de).
+This project however will have more functionalities like:
+- 3D graphics
+- More options
+- 22.5° curves
+- Scriptable trains and stations
+- Groupping junctions, signals, objects etc. into stations
+- Various signals
+- AI for trains
+- And more.
+
+Currently the project is in very early development stage (versions not numerated yet) and has some of these working functionalities:
+- Adding, removing and replacing tiles (you can change current tile by scrolling mouse wheel)
+- Working cursor
+- Almost infinite world (arrow keys to move the camera)
+- Context menu when right clicked on the tile
+
+Functionalities that are currently WIP:
+- Menu bar on top (working buttons)
+
+Functionalities that will be added soon:
+- Port from 2D to 3D once the preparations are finished
+- Dynamically generated track graphics
+- Multiple selecting tiles
+
+
+
+Feel free to contribute!
+
+~ jakubg1
