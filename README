@@ -16,9 +16,11 @@ Currently the project is in very early development stage (versions not numerated
 - Working cursor
 - Almost infinite world (arrow keys to move the camera)
 - Context menu when right clicked on the tile
+- Menu bar on the top
+- Time (days of week, hours, minutes, seconds)
 
 Functionalities that are currently WIP:
-- Menu bar on top (working buttons)
+-
 
 Functionalities that will be added soon:
 - Port from 2D to 3D once the preparations are finished
