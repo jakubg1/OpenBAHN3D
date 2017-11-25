@@ -19,7 +19,7 @@ func _ready():
 
 func _process(delta):
 	
-	if (isEnabled):
+	if isEnabled:
 		mpos = get_global_mouse_pos()
 		pos = (mpos / size).floor()
 		pxpos = pos * size

@@ -104,7 +104,8 @@ func _new_second():
 
 func _cursorL_pressed(pos):
 	
-	_set_tile(pos, curTile, [])
+	if System.Cursor.isEnabled:
+		_set_tile(pos, curTile, [])
 
 func _cursorU_roll():
 	
