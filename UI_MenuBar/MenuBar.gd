@@ -5,6 +5,7 @@ var strDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday
 func _ready():
 	
 	System.Map.connect("new_second", self, "_menu_time_refresh")
+	System.Cursor.connect("LMB_pressed", self, "_cursorL_pressed")
 
 func _on_ButtonFile_pressed():
 	
@@ -39,6 +40,11 @@ func _menu_time_refresh(time):
 		text += "0"
 	text += str(time[3])
 	get_node("ButtonTime/MenuTime").set_item_text(0, text)
+
+func _cursorL_pressed(pos):
+	
+	print("dupa")
+	_hide_all()
 
 func _hide_all():
 	
