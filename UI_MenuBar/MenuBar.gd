@@ -43,7 +43,6 @@ func _menu_time_refresh(time):
 
 func _cursorL_pressed(pos):
 	
-	print("dupa")
 	_hide_all()
 
 func _hide_all():

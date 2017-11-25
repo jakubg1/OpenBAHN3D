@@ -1,11 +1,13 @@
 extends TileMap
 
-var tiles = {}
-var curTile = 0
-var cameraPos = Vector2(0, 0)
-var cameraSize = Vector2(26, 30)
 var time = [0, 0, 0, 0] # first: day of the week (0-6), second: hour, third: minute, fourth: second
 var timeDelay = 0
+var simSpeed = 1 # lagging starts from 15000
+var fps = 0
+var tiles = {}
+var cameraPos = Vector2(0, 0)
+var cameraSize = Vector2(26, 30)
+var curTile = 0
 
 enum {UP, LEFT, DOWN, RIGHT}
 
@@ -23,10 +25,19 @@ func _ready():
 
 func _process(delta):
 	
-	timeDelay += delta
-	if timeDelay >= 1:
+	# FPS counting
+	fps = 1 / delta
+	#print(fps)
+	
+	# time management
+	var simTimeElapsed = delta * simSpeed
+	timeDelay += simTimeElapsed
+	while timeDelay >= 1:
 		_new_second()
 		timeDelay -= 1
+	
+	# simulator loop (train physics calculating etc.)
+	pass
 
 func _unhandled_input(event):
 	
