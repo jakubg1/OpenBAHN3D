@@ -73,7 +73,37 @@ margin/top = 24.0
 margin/right = 192.0
 margin/bottom = 94.0
 popup/exclusive = false
-items = [ "Mon 00:00:00", null, false, false, false, 0, 0, null, "", false, "Element 1", null, false, false, false, 1, 0, null, "", true, "Set simulation speed...", null, false, false, false, 2, 0, null, "", false ]
+items = [ "Mon 00:00:00", null, false, false, false, 0, 0, null, "", false, "Element 1", null, false, false, false, 1, 0, null, "", true, "Pause simulation", null, true, false, false, 2, 0, null, "", false ]
+
+[node name="ButtonOptions" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 87.0
+margin/top = 0.0
+margin/right = 150.0
+margin/bottom = 24.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Options"
+flat = true
+
+[node name="MenuOptions" type="PopupMenu" parent="ButtonOptions"]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 24.0
+margin/right = 192.0
+margin/bottom = 94.0
+popup/exclusive = false
+items = [ "Null", null, false, false, true, 0, 0, null, "", false ]
 
 [connection signal="pressed" from="ButtonFile" to="." method="_on_ButtonFile_pressed"]
 
@@ -82,5 +112,9 @@ items = [ "Mon 00:00:00", null, false, false, false, 0, 0, null, "", false, "Ele
 [connection signal="pressed" from="ButtonTime" to="." method="_on_ButtonTime_pressed"]
 
 [connection signal="item_pressed" from="ButtonTime/MenuTime" to="." method="_on_MenuTime_item_pressed"]
+
+[connection signal="pressed" from="ButtonOptions" to="." method="_on_ButtonOptions_pressed"]
+
+[connection signal="item_pressed" from="ButtonOptions/MenuOptions" to="." method="_on_MenuOptions_item_pressed"]
 
 
