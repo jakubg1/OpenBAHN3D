@@ -12,14 +12,11 @@ var curTile = 0
 
 enum {UP, LEFT, DOWN, RIGHT}
 
-signal new_second
-
 func _ready():
 	
-	System.Cursor.connect("LMB_pressed", self, "_cursorL_pressed")
-	System.Cursor.connect("MW_up", self, "_cursorU_roll")
-	System.Cursor.connect("MW_down", self, "_cursorD_roll")
-	System.Cursor.get_node("CursorContextMenu").connect("menu_select", self, "_menu_select")
+	System.connect("LMB_pressed", self, "_cursorL_pressed")
+	System.connect("MW_up", self, "_cursorU_roll")
+	System.connect("MW_down", self, "_cursorD_roll")
 	set_process(true)
 	set_process_unhandled_input(true)
 	_refresh()
@@ -113,12 +110,12 @@ func _new_second():
 		time[1] = 0
 	if time[0] == 7: # new week
 		time[0] = 0
-	emit_signal("new_second", time)
+	get_node("../MenuBar")._menu_time_refresh()
 
-func _cursorL_pressed(pos):
+func _cursorL_pressed():
 	
 	if System.Cursor.isEnabled:
-		_set_tile(pos, curTile, [])
+		_set_tile(System.Cursor.pos, curTile, [])
 
 func _cursorU_roll():
 	
@@ -128,11 +125,6 @@ func _cursorD_roll():
 	
 	if curTile > 0:
 		curTile -= 1
-
-func _menu_select(id):
-	
-	if id == 0:
-		_rem_tile(System.Cursor.pos)
 
 static func get_tile_name(pos):
 	

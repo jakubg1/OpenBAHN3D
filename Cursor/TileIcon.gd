@@ -2,8 +2,8 @@ extends Sprite
 
 func _ready():
 	
-	System.Cursor.connect("MW_up", self, "_cursorU_roll")
-	System.Cursor.connect("MW_down", self, "_cursorD_roll")
+	System.connect("MW_up", self, "_cursorU_roll")
+	System.connect("MW_down", self, "_cursorD_roll")
 	_refresh()
 
 func _refresh():

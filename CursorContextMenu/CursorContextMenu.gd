@@ -1,17 +1,20 @@
 extends PopupMenu
 
-signal menu_state
-signal menu_select
-
 func _ready():
 	
+	System.connect("refresh_texts", self, "_txt_refresh")
+	
+	System.connect("LMB_pressed", self, "_cursorL_pressed")
+	System.connect("RMB_pressed", self, "_cursorR_pressed")
 	set_process(true)
-	System.Cursor.connect("LMB_pressed", self, "_cursorL_pressed")
-	System.Cursor.connect("RMB_pressed", self, "_cursorR_pressed")
+
+func _txt_refresh():
+	
+	set_item_text(0, System.tr("UI_CONTEXT_REMOVE"))
 
 func _process(delta):
 	
-	emit_signal("menu_state", is_visible())
+	System.Cursor.isEnabled = not is_visible()
 
 func _showMenu(pos):
 	
@@ -22,14 +25,15 @@ func _hideMenu():
 	
 	hide()
 
-func _cursorL_pressed(pos):
+func _cursorL_pressed():
 	
 	_hideMenu()
 
-func _cursorR_pressed(pos):
+func _cursorR_pressed():
 	
-	_showMenu(pos)
+	_showMenu(System.Cursor.pxpos + System.Cursor.size)
 
 func _item_pressed(id):
 	
-	emit_signal("menu_select", id)
+	if id == 0:
+		System.Map._rem_tile(System.Cursor.pos)
