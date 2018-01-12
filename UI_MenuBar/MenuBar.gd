@@ -18,8 +18,6 @@ func _txt_refresh():
 	get_node("ButtonFile/MenuFile").set_item_text(3, System.tr("UI_MENU_FILE_SAVE_AS"))
 	get_node("ButtonFile/MenuFile").set_item_text(5, System.tr("UI_MENU_FILE_RECENT"))
 	get_node("ButtonTime/MenuTime").set_item_text(2, System.tr("UI_MENU_TIME_PAUSE"))
-	get_node("ButtonLanguage/MenuLanguage").set_item_text(0, System.tr("UI_MENU_LANGUAGE_EN"))
-	get_node("ButtonLanguage/MenuLanguage").set_item_text(1, System.tr("UI_MENU_LANGUAGE_PL"))
 
 func _on_ButtonFile_pressed():
 	
