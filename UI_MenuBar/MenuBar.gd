@@ -3,8 +3,10 @@ extends HBoxContainer
 func _ready():
 	
 	System.connect("refresh_texts", self, "_txt_refresh")
+	System.set_language("en")
 	
 	System.connect("LMB_pressed", self, "_cursorL_pressed")
+	
 
 func _txt_refresh():
 	
@@ -18,6 +20,11 @@ func _txt_refresh():
 	get_node("ButtonFile/MenuFile").set_item_text(3, System.tr("UI_MENU_FILE_SAVE_AS"))
 	get_node("ButtonFile/MenuFile").set_item_text(5, System.tr("UI_MENU_FILE_RECENT"))
 	get_node("ButtonTime/MenuTime").set_item_text(2, System.tr("UI_MENU_TIME_PAUSE"))
+	#for i in range(TranslationServer.
+	# in the future, the list of the languages should be generated dynamically
+	get_node("ButtonLanguage/MenuLanguage").set_item_text(0, System.tr("UI_MENU_LANGUAGE_EN") + " (" + System.trl("UI_MENU_LANGUAGE_EN", "en") + ")")
+	get_node("ButtonLanguage/MenuLanguage").set_item_text(1, System.tr("UI_MENU_LANGUAGE_PL") + " (" + System.trl("UI_MENU_LANGUAGE_PL", "pl") + ")")
+	get_node("ButtonLanguage/MenuLanguage").set_item_text(2, System.tr("UI_MENU_LANGUAGE_PT") + " (" + System.trl("UI_MENU_LANGUAGE_PT", "pt") + ")")
 
 func _on_ButtonFile_pressed():
 	
@@ -60,6 +67,8 @@ func _on_MenuLanguage_item_pressed(id):
 		System.set_language("en")
 	if id == 1:
 		System.set_language("pl")
+	if id == 2:
+		System.set_language("pt")
 
 func _menu_time_refresh():
 	

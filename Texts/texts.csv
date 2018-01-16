@@ -1,21 +1,22 @@
-id,en,pl
-UI_MENU_FILE,File,Plik
-UI_MENU_FILE_NEW,New...,Nowy...
-UI_MENU_FILE_OPEN,Open...,Otwórz...
-UI_MENU_FILE_SAVE,Save,Zapisz
-UI_MENU_FILE_SAVE_AS,Save As...,Zapisz jako...
-UI_MENU_FILE_RECENT,Recent Projects...,Ostatnie projekty...
-UI_MENU_TIME,Time,Czas
-UI_MENU_TIME_PAUSE,Pause simulation,Pauzuj symulację
-UI_MENU_TIME_WEEK_1,Monday,Poniedziałek
-UI_MENU_TIME_WEEK_2,Tuesday,Wtorek
-UI_MENU_TIME_WEEK_3,Wednesday,Środa
-UI_MENU_TIME_WEEK_4,Thursday,Czwartek
-UI_MENU_TIME_WEEK_5,Friday,Piątek
-UI_MENU_TIME_WEEK_6,Saturday,Sobota
-UI_MENU_TIME_WEEK_7,Sunday,Niedziela
-UI_MENU_OPTIONS,Settings,Opcje
-UI_MENU_LANGUAGE,Language,Język
-UI_MENU_LANGUAGE_EN,English,Angielski
-UI_MENU_LANGUAGE_PL,Polish,Polski
-UI_CONTEXT_REMOVE,Remove tile,Usuń element
+"id","en","pl","pt"
+"UI_MENU_FILE","File","Plik","Arquivo"
+"UI_MENU_FILE_NEW","New...","Nowy...","Novo..."
+"UI_MENU_FILE_OPEN","Open...","Otwórz...","Abrir..."
+"UI_MENU_FILE_SAVE","Save","Zapisz","Salvar"
+"UI_MENU_FILE_SAVE_AS","Save As...","Zapisz jako...","Salvar Como..."
+"UI_MENU_FILE_RECENT","Recent Projects...","Ostatnie projekty...","Projetos Recentes..."
+"UI_MENU_TIME","Time","Czas","Tempo"
+"UI_MENU_TIME_PAUSE","Pause simulation","Pauzuj symulację","Pausar simulação"
+"UI_MENU_TIME_WEEK_1","Monday","Poniedziałek","Segunda-Feira"
+"UI_MENU_TIME_WEEK_2","Tuesday","Wtorek","Terça-Feira"
+"UI_MENU_TIME_WEEK_3","Wednesday","Środa","Quarta-Feira"
+"UI_MENU_TIME_WEEK_4","Thursday","Czwartek","Quinta-Feira"
+"UI_MENU_TIME_WEEK_5","Friday","Piątek","Sexta-Feira"
+"UI_MENU_TIME_WEEK_6","Saturday","Sobota","Sábado"
+"UI_MENU_TIME_WEEK_7","Sunday","Niedziela","Domingo"
+"UI_MENU_OPTIONS","Settings","Opcje","Configurações"
+"UI_MENU_LANGUAGE","Language","Język","Linguagem"
+"UI_MENU_LANGUAGE_EN","English","Angielski","Inglês"
+"UI_MENU_LANGUAGE_PL","Polish","Polski","Polonês"
+"UI_MENU_LANGUAGE_PT","Portuguese","Portugalski","Português"
+"UI_CONTEXT_REMOVE","Remove tile","Usuń element","Remover Trilho"

@@ -133,7 +133,7 @@ margin/top = 24.0
 margin/right = 192.0
 margin/bottom = 44.0
 popup/exclusive = false
-items = [ "English", null, false, false, false, 0, 0, null, "", false, "Polish", null, false, false, false, 1, 0, null, "", false ]
+items = [ "English", null, false, false, false, 0, 0, null, "", false, "Polish", null, false, false, false, 1, 0, null, "", false, "Portuguese", null, false, false, false, 2, 0, null, "", false ]
 
 [connection signal="pressed" from="ButtonFile" to="." method="_on_ButtonFile_pressed"]
 

@@ -13,7 +13,6 @@ signal MW_down
 func _ready():
 	
 	set_process_unhandled_input(true)
-	set_language("en")
 
 func set_language(locale):
 	
@@ -23,6 +22,14 @@ func set_language(locale):
 func tr(text):
 	
 	return TranslationServer.translate(text)
+
+func trl(text, locale):
+	
+	var current_locale = TranslationServer.get_locale()
+	TranslationServer.set_locale(locale)
+	var translated_text = tr(text)
+	TranslationServer.set_locale(current_locale)
+	return translated_text
 
 func _unhandled_input(event):
 	
