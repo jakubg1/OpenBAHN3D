@@ -7,6 +7,7 @@ func _ready():
 	
 	System.connect("LMB_pressed", self, "_cursorL_pressed")
 	
+	_create_menu_item("Test")
 
 func _txt_refresh():
 	
@@ -96,3 +97,11 @@ func _hide_all():
 	get_node("ButtonTime/MenuTime").hide()
 	get_node("ButtonOptions/MenuOptions").hide()
 	get_node("ButtonLanguage/MenuLanguage").hide()
+
+var menu_item_node = preload("res://UI_MenuBar/MenuBarButton.tscn")
+
+func _create_menu_item(name):
+	
+	var menu_item = menu_item_node.instance()
+	menu_item._update_text(name)
+	add_child(menu_item)
