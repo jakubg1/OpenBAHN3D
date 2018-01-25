@@ -7,7 +7,7 @@ func _ready():
 	
 	System.connect("LMB_pressed", self, "_cursorL_pressed")
 	
-	_create_menu_item("Test")
+	_create_menu_item("Test", [[["LanguageEN"], 0, [[1, "en"]]], [["LanguagePL"], 0, [[1, "pl"]]], [["UI_MENU_OPTIONS", " dupa!"], 1, [[0]]]])
 
 func _txt_refresh():
 	
@@ -97,11 +97,13 @@ func _hide_all():
 	get_node("ButtonTime/MenuTime").hide()
 	get_node("ButtonOptions/MenuOptions").hide()
 	get_node("ButtonLanguage/MenuLanguage").hide()
+	get_node("Button/Menu").hide()
 
 var menu_item_node = preload("res://UI_MenuBar/MenuBarButton.tscn")
 
-func _create_menu_item(name):
+func _create_menu_item(name, items):
 	
 	var menu_item = menu_item_node.instance()
-	menu_item._update_text(name)
+	menu_item._set_text("UI_MENU_FILE")
+	menu_item._set_items(items)
 	add_child(menu_item)
