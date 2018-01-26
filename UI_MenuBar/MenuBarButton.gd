@@ -38,6 +38,7 @@ func _set_items(items):
 				# 0 - action type and 1 - parameters, they can be:
 					# 0 = nothing
 					# 1 = change language (parameters: string-locale)
+					# 2 = set pause state (parameters: bool-paused)
 				# the action is performed when every time when it's selected (checkable item also sends if the item was checked or unchecked)
 	for i in range(items.size()):
 		var item = items[i]
@@ -71,6 +72,8 @@ func _on_Menu_item_pressed(id):
 	# we described types of actions above, now we need to execute them
 	if action[0] == 1:
 		System.set_language(action[1])
+	if action[0] == 2:
+		System.set_pause(action[1])
 	# the code below is for checking/unchecking checkable item
 	# we need to add a condition because we can check uncheckable item, and when we will use it second time it will crash (nonexistent second action)
 	if menu_node.is_item_checkable(id):

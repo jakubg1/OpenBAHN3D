@@ -31,6 +31,10 @@ func trl(text, locale):
 	TranslationServer.set_locale(current_locale)
 	return translated_text
 
+func set_pause(state):
+	
+	Map.pause = state
+
 func _unhandled_input(event):
 	
 	if event.type == InputEvent.MOUSE_BUTTON:
