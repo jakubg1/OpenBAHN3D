@@ -7,7 +7,44 @@ func _ready():
 	
 	System.connect("LMB_pressed", self, "_cursorL_pressed")
 	
-	_create_menu_item("Test", [[["LanguageEN"], 0, [[1, "en"]]], [["LanguagePL"], 0, [[1, "pl"]]], [["UI_MENU_OPTIONS", " dupa!"], 1, [[0]]]])
+	# creating menu items; some useful items:
+	# [[], -1, [[0]]] = separator
+	var menu_entries = []
+	
+	_create_menu_item("Test", [
+	[["LanguageEN"], 0, [[1, "en"]]],
+	[["LanguagePL"], 0, [[1, "pl"]]],
+	[["UI_MENU_OPTIONS", " dupa!"], 1, [[0]]],
+	[[], -1, [[0]]]
+	])
+	
+	_create_menu_item("UI_MENU_FILE", [
+	[["UI_MENU_FILE_NEW"], 0, [[0]]],
+	[["UI_MENU_FILE_OPEN"], 0, [[0]]],
+	[["UI_MENU_FILE_SAVE"], 0, [[0]]],
+	[["UI_MENU_FILE_SAVE_AS"], 0, [[0]]],
+	[[], -1, [[0]]],
+	[["UI_MENU_FILE_RECENT"], 0, [[0]]]
+	])
+	
+	_create_menu_item("UI_MENU_TIME", [
+	[["TIME"], 0, [[0]]],
+	[[], -1, [[0]]],
+	[["UI_MENU_TIME_PAUSE"], 1, [[2, true], [2, false]]]
+	])
+	
+	_create_menu_item("UI_MENU_OPTIONS", [
+	[["Null"], 0, [[0]]]
+	])
+	
+	var locale_list = ["en", "pl", "pt"] # to change
+	for i in range(locale_list.size()):
+		var local = locale_list[i]
+		menu_entries.append([[System.tr("UI_MENU_LANGUAGE_" + local.to_upper()) + " (" + System.trl("UI_MENU_LANGUAGE_" + local.to_upper(), local) + ")"], 1, [[1, local]]])
+	
+	_create_menu_item("UI_MENU_LANGUAGE",
+	menu_entries
+	)
 
 func _txt_refresh():
 	
@@ -104,6 +141,6 @@ var menu_item_node = preload("res://UI_MenuBar/MenuBarButton.tscn")
 func _create_menu_item(name, items):
 	
 	var menu_item = menu_item_node.instance()
-	menu_item._set_text("UI_MENU_FILE")
+	menu_item._set_text(name)
 	menu_item._set_items(items)
 	add_child(menu_item)
