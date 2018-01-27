@@ -1,5 +1,8 @@
 extends HBoxContainer
 
+signal UI_MENUBAR_CONTEXT_HIDE
+signal UI_MENUBAR_REFRESH
+
 func _ready():
 	
 	System.connect("refresh_texts", self, "_txt_refresh")
@@ -28,7 +31,7 @@ func _ready():
 	])
 	
 	_create_menu_item("UI_MENU_TIME", [
-	[["TIME"], 0, [[0]]],
+	[["TIME"], 0, [[3]]],
 	[[], -1, [[0]]],
 	[["UI_MENU_TIME_PAUSE"], 1, [[2, true], [2, false]]]
 	])
@@ -40,7 +43,7 @@ func _ready():
 	var locale_list = ["en", "pl", "pt"] # to change
 	for i in range(locale_list.size()):
 		var local = locale_list[i]
-		menu_entries.append([[System.tr("UI_MENU_LANGUAGE_" + local.to_upper()) + " (" + System.trl("UI_MENU_LANGUAGE_" + local.to_upper(), local) + ")"], 0, [[1, local]]])
+		menu_entries.append([[("UI_MENU_LANGUAGE_" + local.to_upper()), " (", System.trl("UI_MENU_LANGUAGE_" + local.to_upper(), local), ")"], 0, [[1, local]]])
 	
 	_create_menu_item("UI_MENU_LANGUAGE",
 	menu_entries
@@ -63,9 +66,6 @@ func _txt_refresh():
 	get_node("ButtonLanguage/MenuLanguage").set_item_text(0, System.tr("UI_MENU_LANGUAGE_EN") + " (" + System.trl("UI_MENU_LANGUAGE_EN", "en") + ")")
 	get_node("ButtonLanguage/MenuLanguage").set_item_text(1, System.tr("UI_MENU_LANGUAGE_PL") + " (" + System.trl("UI_MENU_LANGUAGE_PL", "pl") + ")")
 	get_node("ButtonLanguage/MenuLanguage").set_item_text(2, System.tr("UI_MENU_LANGUAGE_PT") + " (" + System.trl("UI_MENU_LANGUAGE_PT", "pt") + ")")
-	
-	#menu_item_node._update_text()
-	#menu_item_node._update_items()
 
 func _on_ButtonFile_pressed():
 	

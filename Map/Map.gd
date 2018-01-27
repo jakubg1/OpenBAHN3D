@@ -12,6 +12,8 @@ var curTile = 0
 
 enum {UP, LEFT, DOWN, RIGHT}
 
+signal new_second
+
 func _ready():
 	
 	System.connect("LMB_pressed", self, "_cursorL_pressed")
@@ -111,6 +113,7 @@ func _new_second():
 	if time[0] == 7: # new week
 		time[0] = 0
 	get_node("../MenuBar")._menu_time_refresh()
+	emit_signal("new_second")
 
 func _cursorL_pressed():
 	

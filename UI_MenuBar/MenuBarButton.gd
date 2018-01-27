@@ -9,8 +9,20 @@ var refreshing_conditions = []
 
 func _ready():
 	
+	System.connect("refresh_texts", self, "_txt_refresh")
+	System.Map.connect("new_second", self, "_second_refresh")
+	
 	var pos = get_pos()
 	menu_node.set_pos(Vector2(pos[0], pos[1] + 24))
+
+func _txt_refresh():
+	
+	_update_text()
+	_update_items()
+
+func _second_refresh():
+	
+	_update_items("time")
 
 func _set_text(text):
 	
@@ -43,6 +55,7 @@ func _set_items(items):
 					# 0 = nothing
 					# 1 = change language (parameters: string-locale)
 					# 2 = set pause state (parameters: bool-paused)
+					# 3 = open time changing window (no parameters)
 				# the action is performed when every time when it's selected (checkable item also sends if the item was checked or unchecked)
 	item_text_source = []
 	for i in range(items.size()):
@@ -83,7 +96,7 @@ func _update_items(d_condition = "none"):
 		for i in range(menu_node.get_item_count()):
 			_update_item(i)
 	else:
-		for i in range(refreshing_conditions.get_size()):
+		for i in range(refreshing_conditions.size()):
 			var condition = refreshing_conditions[i]
 			if d_condition == condition[1]:
 				_update_item(condition[0])
