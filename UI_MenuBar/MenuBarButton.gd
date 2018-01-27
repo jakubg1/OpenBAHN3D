@@ -11,6 +11,7 @@ func _ready():
 	
 	System.connect("refresh_texts", self, "_txt_refresh")
 	System.Map.connect("new_second", self, "_second_refresh")
+	get_node("../").connect("menubar_hide_context", self, "_hide")
 	
 	var pos = get_pos()
 	menu_node.set_pos(Vector2(pos[0], pos[1] + 24))
@@ -118,7 +119,7 @@ func _time_text():
 
 func _on_Button_pressed():
 	
-	get_node("../")._hide_all()
+	get_node("../").emit_signal("menubar_hide_context")
 	menu_node.show()
 
 func _on_Menu_item_pressed(id):
@@ -139,3 +140,7 @@ func _on_Menu_item_pressed(id):
 	# we need to add a condition because we can check uncheckable item, and when we will use it second time it will crash (nonexistent second action)
 	if menu_node.is_item_checkable(id):
 		menu_node.set_item_checked(id, not menu_node.is_item_checked(id))
+
+func _hide():
+	
+	menu_node.hide()

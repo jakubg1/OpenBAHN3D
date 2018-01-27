@@ -1,7 +1,6 @@
 extends HBoxContainer
 
-signal UI_MENUBAR_CONTEXT_HIDE
-signal UI_MENUBAR_REFRESH
+signal menubar_hide_context
 
 func _ready():
 	
@@ -139,7 +138,7 @@ func _hide_all():
 	get_node("ButtonTime/MenuTime").hide()
 	get_node("ButtonOptions/MenuOptions").hide()
 	get_node("ButtonLanguage/MenuLanguage").hide()
-	get_node("Button/Menu").hide()
+	emit_signal("menubar_hide_context")
 
 var menu_item_node = preload("res://UI_MenuBar/MenuBarButton.tscn")
 
