@@ -112,7 +112,6 @@ func _new_second():
 		time[1] = 0
 	if time[0] == 7: # new week
 		time[0] = 0
-	get_node("../MenuBar")._menu_time_refresh()
 	emit_signal("new_second")
 
 func _cursorL_pressed():

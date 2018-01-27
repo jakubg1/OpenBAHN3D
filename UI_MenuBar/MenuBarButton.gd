@@ -57,6 +57,7 @@ func _set_items(items):
 					# 1 = change language (parameters: string-locale)
 					# 2 = set pause state (parameters: bool-paused)
 					# 3 = open time changing window (no parameters)
+					# 4 = clear the world (no parameters)
 				# the action is performed when every time when it's selected (checkable item also sends if the item was checked or unchecked)
 	item_text_source = []
 	for i in range(items.size()):
@@ -136,6 +137,8 @@ func _on_Menu_item_pressed(id):
 		System.set_language(action[1])
 	if action[0] == 2:
 		System.set_pause(action[1])
+	if action[0] == 4:
+		System.Map._clear_world()
 	# the code below is for checking/unchecking checkable item
 	# we need to add a condition because we can check uncheckable item, and when we will use it second time it will crash (nonexistent second action)
 	if menu_node.is_item_checkable(id):
